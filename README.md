@@ -1,7 +1,7 @@
-operias
+Operias
 =======
 
-Operias is an open source tool to produce diff reports between two version of a software project. For now, it will only use on maven projects. In the latest version you can also use it to compare you code to a random commit from git.
+Operias is an open source tool that produces a coverage difference report between two versions of a software project. Operias can be run as a standalone version that creates a coverage diff report for two given versions of code, the other is a tool that provides integration with GitHub Pull Requests. Currently, Operias supports only maven based Java projects, future extensions will support other Java build tools.
 
 Demo
 =======
