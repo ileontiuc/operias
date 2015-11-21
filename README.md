@@ -37,6 +37,7 @@ The operias-report tool can be executed using the folliwing command:
 
 ##Flags
 This table shows all the possible flags that can be used when running operias-report.
+
 Parameter | Short parameter name | Description | 
 ----------|----------|-----------|
 --destination-directory | -d | The directory where the generated site will be placed
