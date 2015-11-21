@@ -1,24 +1,42 @@
 Operias
 =======
 
-Operias is an open source tool that produces a coverage difference report between two versions of a software project. Operias can be run as a standalone version that creates a coverage diff report for two given versions of code, the other is a tool that provides integration with GitHub Pull Requests. Currently, Operias supports only maven based Java projects, future extensions will support other Java build tools.
+Operias is an open source tool that produces a coverage difference report between two versions of a software project. Operias can be run as a standalone version (operias-report) that creates a coverage diff report for two given versions of code, the other is a tool that provides integration with GitHub Pull Requests (operias-servlet). Currently, Operias supports only maven based Java projects, future extensions will support other Java build tools.
 
 Demo
 =======
 For a short demo on how this tool works please watch the video at https://youtu.be/2Dpigi5ghZE
 
-Usage
+Compilation of the tool
 =======
 
-To use operias, clone the master branch and execute the following command:
+To compile the operias-report standalone tool, the following command should be issued in the operias-report directory.
 ```
-  mvn clean compile assembly:single
-```
-After that, go to the target directory and execute:
-```ini
-  java -cp '<path-to-project>/target/operias-<version>-jar-with-dependencies.jar' operias.Main <args>
+  mvn clean compile assembly:assembly -DskipTests=true
 ```
 
+For the operias-servlet tool, it is important that the operias-report tool is installed in your local maven repository. This can be acheived with the aid of the following command in operias-report directory:
+
+```
+  mvn install
+```
+
+The operias-servlet tool can then be compiled using the command:
+
+```
+  mvn clean compile assembly:assembly -DskipTests=true
+```
+
+Running Operias Report
+=======
+
+The operias-report tool can be executed using the folliwing command:
+```ini
+  java -cp '<path-to-operias-report>/target/operias-report-<version>-jar-with-dependencies.jar' operias.Main <args>
+```
+
+##Flags
+This table shows all the possible flags that can be used when running operias-report.
 Parameter | Short parameter name | Description | 
 ----------|----------|-----------|
 --destination-directory | -d | The directory where the generated site will be placed
@@ -34,4 +52,12 @@ Parameter | Short parameter name | Description |
 --temp-directory | -td | If Operias fails to execute, it is possible it does not have the rights to create a temporary folder, use this parameter to set your own temporary directory for Operias. Be aware, it will delete all the contents of the temporary folder when the execution has completed
 --verbose | -v | Provide this parameter enable the output of errors, warnings and info messages
 
+
+Running Operias Servlet
+=======
+
+The operias-servlet tool can be executed using the folliwing command:
+```ini
+  java -cp '<path-to-operias-report>/target/operias-report-<version>-jar-with-dependencies.jar' operias.Main <args>
+```
 
