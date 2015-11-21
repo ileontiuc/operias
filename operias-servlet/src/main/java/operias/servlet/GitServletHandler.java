@@ -28,7 +28,7 @@ public class GitServletHandler extends AbstractHandler {
 		StringWriter writer = new StringWriter();
 		IOUtils.copy(instream, writer);
 		String inputData = writer.toString();
-		
+		System.out.println(inputData);
 		JsonParser parser = new JsonParser();
 		
 		// Get the object containig all information
