@@ -30,7 +30,7 @@ The operias-servlet tool can then be compiled using the command:
 Running Operias Report
 =======
 
-The operias-report tool can be executed using the folliwing command:
+The operias-report tool can be executed using the following command:
 ```ini
   java -cp '<path-to-operias-report>/target/operias-report-<version>-jar-with-dependencies.jar' operias.Main <args>
 ```
@@ -57,8 +57,23 @@ Parameter | Short parameter name | Description |
 Running Operias Servlet
 =======
 
-The operias-servlet tool can be executed using the folliwing command:
+The operias-servlet tool can be executed using the following command:
 ```ini
-  java -cp '<path-to-operias-report>/target/operias-report-<version>-jar-with-dependencies.jar' operias.Main <args>
+  java -cp '<path-to-operias-servlet>/target/operias-servlet-<version>-jar-with-dependencies.jar' operias.servlet.OperiasServlet <args>
 ```
 
+##Setup of the tool
+To enable a project to use the operias-servlet tool, the oroject must have a webhook which connects to the IP address of the machine that is running the operias-servlet. The option to add a webhook can be found under Settings -> webhooks. More information can be found [here](https://developer.github.com/webhooks). 
+
+##Flags
+This table shows all the possible flags that can be used when running operias-servlet.
+
+Parameter | Short Parameter | Description |
+----------|-----------------|------------|
+--server-ip | -ip | This is the IP of the server on which the webhook runs
+--git-server-port | -gp | The port used for received the data from GitHub
+--html-server-port | -hp | The port on which the generated HTML sites are hosted
+--temporary-directory | -td | A local directory which Operias can use to store intermediate results during execution
+--results-directory | -rd | A local directory which is used to store the generated reports in
+---username | -u | The username of the GitHub account, which is used to post the comments
+--poassword | -p | The password of the GitHub account
