@@ -63,7 +63,7 @@
       <configuration>
         <archive>
           <manifest>
-            <mainClass>fully.qualified.MainClass</mainClass>
+            <mainClass>operias.servlet.OperiasServlet</mainClass>
           </manifest>
         </archive>
         <descriptorRefs>
@@ -120,7 +120,7 @@
   		<dependency>
   			<groupId>com.operias.report</groupId>
   			<artifactId>operias-report</artifactId>
-  			<version>1.0.0</version>
+  			<version>1.0.2</version>
   		</dependency>
   	</dependencies>
   </dependencyManagement>

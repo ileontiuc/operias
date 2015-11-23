@@ -1,23 +1,42 @@
-operias
+Operias
 =======
 
-Operias is an open source tool to produce diff reports between two version of a software project. For now, it will only use on maven projects. In the latest version you can also use it to compare you code to a random commit from git.
+Operias is an open source tool that produces a coverage difference report between two versions of a software project. Operias can be run as a standalone version (operias-report) that creates a coverage diff report for two given versions of code, the other is a tool that provides integration with GitHub Pull Requests (operias-servlet). Currently, Operias supports only maven based Java projects, future extensions will support other Java build tools.
 
 Demo
 =======
 For a short demo on how this tool works please watch the video at https://youtu.be/2Dpigi5ghZE
 
-Usage
+Compilation of the tool
 =======
 
-To use operias, clone the master branch and execute the following command:
+To compile the operias-report standalone tool, the following command should be issued in the operias-report directory.
 ```
-  mvn clean compile assembly:single
+  mvn clean compile assembly:assembly -DskipTests=true
 ```
-After that, go to the target directory and execute:
+
+For the operias-servlet tool, it is important that the operias-report tool is installed in your local maven repository. This can be acheived with the aid of the following command in operias-report directory:
+
+```
+  mvn install
+```
+
+The operias-servlet tool can then be compiled using the command:
+
+```
+  mvn clean compile assembly:assembly -DskipTests=true
+```
+
+Running Operias Report
+=======
+
+The operias-report tool can be executed using the following command:
 ```ini
-  java -cp '<path-to-project>/target/operias-<version>-jar-with-dependencies.jar' operias.Main <args>
+  java -cp '<path-to-operias-report>/target/operias-report-<version>-jar-with-dependencies.jar' operias.Main <args>
 ```
+
+##Flags
+This table shows all the possible flags that can be used when running operias-report.
 
 Parameter | Short parameter name | Description | 
 ----------|----------|-----------|
@@ -35,3 +54,31 @@ Parameter | Short parameter name | Description |
 --verbose | -v | Provide this parameter enable the output of errors, warnings and info messages
 
 
+Running Operias Servlet
+=======
+
+The operias-servlet tool can be executed using the following command:
+```ini
+  java -cp '<path-to-operias-servlet>/target/operias-servlet-<version>-jar-with-dependencies.jar' operias.servlet.OperiasServlet <args>
+```
+
+##Setup of the tool
+To enable a project to use the operias-servlet tool, the oroject must have a webhook which connects to the IP address of the machine that is running the operias-servlet. For example: 
+![webhook image](img/webhook.png)
+
+
+
+The option to add a webhook can be found under Settings -> webhooks. More information can be found [here](https://developer.github.com/webhooks). 
+
+##Flags
+This table shows all the possible flags that can be used when running operias-servlet.
+
+Parameter | Short Parameter | Description |
+----------|-----------------|------------|
+--server-ip | -ip | This is the IP of the server on which the webhook runs
+--git-server-port | -gp | The port used for received the data from GitHub
+--html-server-port | -hp | The port on which the generated HTML sites are hosted
+--temporary-directory | -td | A local directory which Operias can use to store intermediate results during execution
+--results-directory | -rd | A local directory which is used to store the generated reports in
+---username | -u | The username of the GitHub account, which is used to post the comments
+--poassword | -p | The password of the GitHub account
