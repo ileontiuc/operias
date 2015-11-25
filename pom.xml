@@ -11,7 +11,12 @@
 		<module>operias-servlet</module>
 	</modules>
 	<description>Operias is an open source tool that produces diff reports between two versions of a codebase. It shows the differences in source file and the difference in code coverage in one simple overview.</description>
-
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url> http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -19,8 +24,8 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
-						<source>1.5</source>
-						<target>1.5</target>
+						<source>1.8</source>
+						<target>1.8</target>
 					</configuration>
 				</plugin>
 			</plugins>

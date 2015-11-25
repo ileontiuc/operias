@@ -11,6 +11,12 @@
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<arguments />
 	</properties>
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url> http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -48,7 +54,7 @@
 					<repoToken>lA1yVEJS9tfbUEJWEQoQVOVrpGB5ylKZH</repoToken>
 				</configuration>
 			</plugin>
-
+			
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
@@ -62,6 +68,7 @@
 					</descriptorRefs>
 				</configuration>
 			</plugin>
+
 		</plugins>
 		<pluginManagement>
 			<plugins>
