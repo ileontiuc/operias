@@ -15,4 +15,10 @@
       <scope>runtime</scope>
     </dependencySet>
   </dependencySets>
+   <files>    
+    <file>
+      <source>LICENSE-operias.txt</source>
+      <outputDirectory>/</outputDirectory>
+    </file>    
+  </files>
 </assembly>
