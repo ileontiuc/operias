@@ -63,12 +63,12 @@ The operias-servlet tool can be executed using the following command:
 ```
 
 ##Setup of the tool
-To enable a project to use the operias-servlet tool, the oroject must have a webhook which connects to the IP address of the machine that is running the operias-servlet. For example: 
+To enable a project to use the operias-servlet tool, the project must have a webhook which connects to the IP address of the machine that is running the operias-servlet. For example: 
 ![webhook image](img/webhook.png)
 
 
 
-The option to add a webhook can be found under Settings -> webhooks. More information can be found [here](https://developer.github.com/webhooks). 
+The option to add a webhook can be found under Settings -> webhooks. More information can be found [here](https://developer.github.com/webhooks/creating/). 
 
 ##Flags
 This table shows all the possible flags that can be used when running operias-servlet.
