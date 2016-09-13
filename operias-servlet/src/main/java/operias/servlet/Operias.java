@@ -38,9 +38,10 @@ public class Operias {
 	 * @return True if pull request can be evaluated
 	 */
 	public boolean execute() {
+		System.out.println(gitData);
 		if (gitData.get("action").getAsString().equals("opened") || 
 				gitData.get("action").getAsString().equals("synchronize")) {
-				
+				System.out.println("I made it bro!");
 				JsonObject pullRequest = gitData.getAsJsonObject("pull_request");
 				
 				JsonObject head = pullRequest.getAsJsonObject("head");
