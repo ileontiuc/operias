@@ -68,7 +68,7 @@ To enable a project to use the operias-servlet tool, the project must have a web
 
 
 
-The option to add a webhook can be found under Settings -> webhooks. **Please ensure that the only data that is being sent over is that related to Pull Requests** More information can be found [here](https://developer.github.com/webhooks/creating/). 
+The option to add a webhook can be found under Settings -> webhooks. **Please ensure that the only data that is being sent over is that related to Pull Requests.** More information can be found [here](https://developer.github.com/webhooks/creating/). 
 
 ##Flags
 This table shows all the possible flags that can be used when running operias-servlet.
