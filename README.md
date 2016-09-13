@@ -68,7 +68,7 @@ To enable a project to use the operias-servlet tool, the project must have a web
 
 
 
-The option to add a webhook can be found under Settings -> webhooks. More information can be found [here](https://developer.github.com/webhooks/creating/). 
+The option to add a webhook can be found under Settings -> webhooks. **Please ensure that the only data that is being sent over is that related to Pull Requests** More information can be found [here](https://developer.github.com/webhooks/creating/). 
 
 ##Flags
 This table shows all the possible flags that can be used when running operias-servlet.
@@ -80,5 +80,5 @@ Parameter | Short Parameter | Description |
 --html-server-port | -hp | The port on which the generated HTML sites are hosted
 --temporary-directory | -td | A local directory which Operias can use to store intermediate results during execution
 --results-directory | -rd | A local directory which is used to store the generated reports in
----username | -u | The username of the GitHub account, which is used to post the comments
---poassword | -p | The password of the GitHub account
+--username | -u | The username of the GitHub account, which is used to post the comments
+--password | -p | The password of the GitHub account
