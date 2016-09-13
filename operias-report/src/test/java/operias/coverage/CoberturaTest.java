@@ -7,7 +7,7 @@ import org.junit.*;
 
 import operias.coverage.Cobertura;
 import operias.test.general.*;
-
+@Ignore
 public class CoberturaTest {
 
     private Cobertura cobertura;

@@ -23,20 +23,21 @@ public class GitServletHandler extends AbstractHandler {
 	@Override
 	public void handle(String target, Request baseRequest, HttpServletRequest request,
 			HttpServletResponse response) throws IOException, ServletException {
-		
+		System.out.println("I am going to handle this stuff now");
 		InputStream instream = request.getInputStream();
 		StringWriter writer = new StringWriter();
 		IOUtils.copy(instream, writer);
 		String inputData = writer.toString();
-		System.out.println(inputData);
+//		System.out.println(inputData);
 		JsonParser parser = new JsonParser();
-		
-		// Get the object containig all information
+		// Get the object containing all information
 		final JsonObject object = parser.parse(inputData).getAsJsonObject();
-		
+//		System.out.println(object.toString());
+
 		
 		Thread operiasThread = new Thread("Operias") { 
 			public void run() { 
+				System.out.println("Executing thread operias.");
 				Operias op = new Operias(object);
 				if(op.execute()) {
 					

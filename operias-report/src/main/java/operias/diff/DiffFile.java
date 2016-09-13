@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-import operias.report.OperiasReport;
 import difflib.Delta;
 import difflib.Delta.TYPE;
 import difflib.DiffUtils;
 import difflib.Patch;
+import operias.report.OperiasReport;
 
 /**
  * Contains the source diff changes for a file

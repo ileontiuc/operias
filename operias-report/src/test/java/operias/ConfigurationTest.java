@@ -12,7 +12,8 @@ import operias.test.general.NoExitSecurityManager;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.Before;
-
+import org.junit.Ignore;
+@Ignore
 public class ConfigurationTest {
 
 	@Before
